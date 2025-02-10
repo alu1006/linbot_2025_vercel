@@ -7,15 +7,15 @@ import os
 app = Flask(__name__)
 
 # # 環境變數（Vercel 會自動讀取）
-LINE_CHANNEL_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
-LINE_CHANNEL_SECRET = os.getenv("LINE_CHANNEL_SECRET")
+# LINE_CHANNEL_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
+# LINE_CHANNEL_SECRET = os.getenv("LINE_CHANNEL_SECRET")
 
-# # 確保變數存在
-if not LINE_CHANNEL_ACCESS_TOKEN or not LINE_CHANNEL_SECRET:
-    raise ValueError("❌ 缺少 LINE_CHANNEL_ACCESS_TOKEN 或 LINE_CHANNEL_SECRET，請檢查環境變數！")
+# # # 確保變數存在
+# if not LINE_CHANNEL_ACCESS_TOKEN or not LINE_CHANNEL_SECRET:
+#     raise ValueError("❌ 缺少 LINE_CHANNEL_ACCESS_TOKEN 或 LINE_CHANNEL_SECRET，請檢查環境變數！")
 
-line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
-handler = WebhookHandler(LINE_CHANNEL_SECRET)
+# line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
+# handler = WebhookHandler(LINE_CHANNEL_SECRET)
 
 @app.route("/")
 def home():
