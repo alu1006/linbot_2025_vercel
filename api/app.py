@@ -16,12 +16,12 @@ LINE_CHANNEL_SECRET = os.getenv("LINE_CHANNEL_SECRET")
 # if not LINE_CHANNEL_ACCESS_TOKEN or not LINE_CHANNEL_SECRET:
 #     raise ValueError("❌ 缺少 LINE_CHANNEL_ACCESS_TOKEN 或 LINE_CHANNEL_SECRET，請檢查環境變數！")
 
-# line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
-# handler = WebhookHandler(LINE_CHANNEL_SECRET)
+line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
+handler = WebhookHandler(LINE_CHANNEL_SECRET)
 
 @app.route("/")
 def home():
-    return f"LINE Bot is running on Vercel!{LINE_CHANNEL_ACCESS_TOKEN}"
+    return f"LINE Bot is running on Vercel!"
 
 # @app.route("/callback", methods=['POST'])
 # def callback():
