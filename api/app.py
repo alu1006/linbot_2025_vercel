@@ -11,6 +11,7 @@ app = Flask(__name__)
 LINE_CHANNEL_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
 LINE_CHANNEL_SECRET = os.getenv("LINE_CHANNEL_SECRET")
 
+
 # # # 確保變數存在
 # if not LINE_CHANNEL_ACCESS_TOKEN or not LINE_CHANNEL_SECRET:
 #     raise ValueError("❌ 缺少 LINE_CHANNEL_ACCESS_TOKEN 或 LINE_CHANNEL_SECRET，請檢查環境變數！")
@@ -20,7 +21,7 @@ LINE_CHANNEL_SECRET = os.getenv("LINE_CHANNEL_SECRET")
 
 @app.route("/")
 def home():
-    return "LINE Bot is running on Vercel!"
+    return f"LINE Bot is running on Vercel!{LINE_CHANNEL_ACCESS_TOKEN}"
 
 # @app.route("/callback", methods=['POST'])
 # def callback():
