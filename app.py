@@ -2,12 +2,14 @@ from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
-
+import os
+import dotenv
+dotenv.load_dotenv()
 app = Flask(__name__)
 
 # LINE Bot 的 Channel Access Token 和 Channel Secret
-line_bot_api = LineBotApi('kfJMMdCmuF0SVe+QB4UwNBRU/hBd7MlF1vkhBC0udOaXF2hyGoRXyATWECXCm7aOrAYCtGYe3HwrhhfsvDZteVs22+qt91VAp5JvbEzXoD8fEYqTVKCKCaMxMLgn5dB1nAqKDOEiVhw5Oj7h9OxgnQdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('20bef6564c18cfea7977c25f6fb041d7')
+line_bot_api = LineBotApi(os.getenv('LINE_CHANNEL_ACCESS_TOKEN'))
+handler = WebhookHandler(os.getenv('LINE_CHANNEL_SECRET'))
 
 @app.route("/callback", methods=['POST'])
 def callback():
