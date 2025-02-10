@@ -3,7 +3,8 @@ from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 import os
-
+from dotenv import load_dotenv
+load_dotenv()
 app = Flask(__name__)
 
 # # 環境變數（Vercel 會自動讀取）
