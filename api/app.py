@@ -1,8 +1,8 @@
-import os
 from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
+import os
 
 app = Flask(__name__)
 
@@ -44,4 +44,4 @@ def handle_message(event):
     )
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=8080)
