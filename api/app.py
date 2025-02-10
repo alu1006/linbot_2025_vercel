@@ -43,5 +43,5 @@ def home():
 #         TextSendMessage(text=event.message.text)
 #     )
 
-if __name__ == "__main__":
-    app.run(port=8080)
+# if __name__ == "__main__":
+#     app.run(port=8080)
