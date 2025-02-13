@@ -17,6 +17,17 @@ line_handler = WebhookHandler(LINE_CHANNEL_SECRET)
 @app.route("/")
 def home():
     return render_template('index.html')
+@app.route('/why')
+def why():
+    return render_template('why.html')
+
+@app.route('/trainer')
+def trainer():
+    return render_template('trainer.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 @app.route("/callback", methods=['POST'])
 def callback():
